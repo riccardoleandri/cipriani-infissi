@@ -14,6 +14,12 @@ function onScroll() {
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+/* su mobile sposto il nav fuori dall'header nel body,
+   altrimenti position:fixed dentro un altro fixed non copre tutto lo schermo su Safari iOS */
+var navEl = document.getElementById('nav');
+if (isMobile.matches) {
+  document.body.appendChild(navEl);
+}
 document.getElementById('burger').addEventListener('click', function () {
   document.body.classList.toggle('menu-open');
 });

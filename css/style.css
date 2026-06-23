@@ -273,11 +273,11 @@ footer .base{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
   .fab .duo .ph-over{left:0;width:70%;border-width:6px}
   .pline:nth-of-type(even) .pimg{order:0}
   .cgrid{grid-template-columns:1fr 1fr}
-  nav.main{position:fixed;inset:0;background:#0C0D0C;flex-direction:column;justify-content:center;gap:38px;transform:translateY(-103%);transition:transform .6s var(--ease);z-index:250}
+  nav.main{position:fixed;inset:0;background:#0C0D0C;flex-direction:column;justify-content:center;align-items:center;gap:38px;transform:translateY(-103%);transition:transform .6s var(--ease);z-index:250}
   body.menu-open nav.main{transform:none}
   nav.main .nl{color:var(--bg)!important;font-size:1rem}
   nav.main .cta{color:var(--bg)!important;font-size:1.5rem}
-  .burger{display:block}
+  .burger{display:block;position:relative;z-index:300}
   .flist .it-r{grid-template-columns:40px 1fr;grid-template-rows:auto auto}
   .flist p{grid-column:2}
 }
