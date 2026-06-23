@@ -6,13 +6,16 @@ var lastY = 0;
 function onScroll() {
   var y = window.scrollY;
   hdr.classList.toggle('lite', y > 60);
-  hdr.classList.toggle('hide', y > 500 && y > lastY);
+  hdr.classList.toggle('hide', y > 500 && y > lastY && !document.body.classList.contains('menu-open'));
   lastY = y;
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 document.getElementById('burger').addEventListener('click', function () {
   document.body.classList.toggle('menu-open');
+  if (document.body.classList.contains('menu-open')) {
+    hdr.classList.remove('hide');
+  }
 });
 
 /* fallback foto remote: se un URL esterno muore, subentra la foto locale */
