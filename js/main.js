@@ -83,11 +83,11 @@ if (lb) {
   });
 }
 
-/* selettore realizzazioni: click espande, secondo click ingrandisce */
+/* selettore realizzazioni: click espande (solo espansione, niente lightbox) */
 var opts = Array.prototype.slice.call(document.querySelectorAll('.sel-opt'));
 opts.forEach(function (o) {
   function act() {
-    if (o.classList.contains('active') && o.dataset.lbi) { openLb(o.dataset.lbi, o.dataset.cap); return; }
+    if (o.classList.contains('active')) return;
     opts.forEach(function (x) { x.classList.remove('active'); });
     o.classList.add('active');
   }
