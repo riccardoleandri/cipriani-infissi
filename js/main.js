@@ -83,7 +83,7 @@ if (lb) {
   });
 }
 
-/* selettore realizzazioni: click espande (solo espansione, niente lightbox) */
+/* selettore realizzazioni: click espande, click su icona apre lightbox */
 var opts = Array.prototype.slice.call(document.querySelectorAll('.sel-opt'));
 opts.forEach(function (o) {
   function act() {
@@ -93,6 +93,17 @@ opts.forEach(function (o) {
   }
   o.addEventListener('click', act);
   o.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
+  var ico = o.querySelector('.ico');
+  if (ico && o.dataset.lbi) {
+    ico.style.pointerEvents = 'auto';
+    ico.style.cursor = 'zoom-in';
+    ico.addEventListener('click', function (e) {
+      if (o.classList.contains('active')) {
+        e.stopPropagation();
+        openLb(o.dataset.lbi, o.dataset.cap);
+      }
+    });
+  }
 });
 
 /* carosello recensioni (solo home) */
