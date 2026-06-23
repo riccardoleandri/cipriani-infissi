@@ -14,11 +14,14 @@ function onScroll() {
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
-/* su mobile sposto il nav fuori dall'header nel body,
-   altrimenti position:fixed dentro un altro fixed non copre tutto lo schermo su Safari iOS */
+/* su mobile sposto nav e burger fuori dall'header nel body,
+   altrimenti position:fixed dentro un altro fixed non copre tutto lo schermo su Safari iOS,
+   e il burger finirebbe sotto il nav overlay */
 var navEl = document.getElementById('nav');
+var burgerEl = document.getElementById('burger');
 if (isMobile.matches) {
   document.body.appendChild(navEl);
+  document.body.appendChild(burgerEl);
 }
 document.getElementById('burger').addEventListener('click', function () {
   document.body.classList.toggle('menu-open');

@@ -277,7 +277,7 @@ footer .base{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
   body.menu-open nav.main{transform:none}
   nav.main .nl{color:var(--bg)!important;font-size:1rem}
   nav.main .cta{color:var(--bg)!important;font-size:1.5rem}
-  .burger{display:block;position:relative;z-index:300}
+  .burger{display:block;position:fixed;top:26px;right:16px;z-index:300}
   .flist .it-r{grid-template-columns:40px 1fr;grid-template-rows:auto auto}
   .flist p{grid-column:2}
 }
