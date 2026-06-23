@@ -59,7 +59,6 @@ header.lite .logo .lg-l{display:none}
 header.lite .logo .lg-d{display:block}
 header.hide{transform:translateY(-100%)}
 body.menu-open{overflow:hidden}
-body.menu-open #hdr{transform:none!important}
 nav.main{display:flex;align-items:center;gap:40px}
 nav.main .nl{font-size:.7rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--bg);position:relative;padding:4px 0}
 header.lite nav.main .nl{color:var(--ink)}
@@ -274,11 +273,11 @@ footer .base{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
   .fab .duo .ph-over{left:0;width:70%;border-width:6px}
   .pline:nth-of-type(even) .pimg{order:0}
   .cgrid{grid-template-columns:1fr 1fr}
-  nav.main{position:fixed;inset:0;background:#0C0D0C;flex-direction:column;justify-content:center;gap:38px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s var(--ease),visibility .5s;z-index:250}
-  body.menu-open nav.main{opacity:1;visibility:visible;pointer-events:auto}
+  nav.main{position:fixed;inset:0;background:#0C0D0C;flex-direction:column;justify-content:center;gap:38px;transform:translateY(-103%);transition:transform .6s var(--ease);z-index:250}
+  body.menu-open nav.main{transform:none}
   nav.main .nl{color:var(--bg)!important;font-size:1rem}
   nav.main .cta{color:var(--bg)!important;font-size:1.5rem}
-  .burger{display:block;position:fixed;top:26px;right:16px;z-index:300}
+  .burger{display:block}
   .flist .it-r{grid-template-columns:40px 1fr;grid-template-rows:auto auto}
   .flist p{grid-column:2}
 }

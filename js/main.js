@@ -1,33 +1,21 @@
 /* Cipriani — Fabbrica Infissi · main.js (v10) */
 
-/* header: sfondo allo scroll, nascondi in discesa */
+/* header: sfondo allo scroll, nascondi in discesa (solo desktop) */
 var hdr = document.getElementById('hdr');
 var lastY = 0;
+var isMobile = window.matchMedia('(max-width:980px)');
 function onScroll() {
   var y = window.scrollY;
   hdr.classList.toggle('lite', y > 60);
-  hdr.classList.toggle('hide', y > 500 && y > lastY && !document.body.classList.contains('menu-open'));
+  if (!isMobile.matches) {
+    hdr.classList.toggle('hide', y > 500 && y > lastY);
+  }
   lastY = y;
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
-var navEl = document.getElementById('nav');
-var burgerEl = document.getElementById('burger');
-/* su mobile il burger deve stare fuori dall'header per restare cliccabile
-   anche quando l'header si nasconde con transform */
-if (window.matchMedia('(max-width:980px)').matches) {
-  document.body.appendChild(burgerEl);
-}
-burgerEl.addEventListener('click', function () {
-  var opening = !document.body.classList.contains('menu-open');
-  if (opening) {
-    document.body.appendChild(navEl);
-    hdr.classList.remove('hide');
-  } else {
-    hdr.querySelector('.bar').appendChild(navEl);
-    lastY = window.scrollY;
-  }
-  document.body.classList.toggle('menu-open', opening);
+document.getElementById('burger').addEventListener('click', function () {
+  document.body.classList.toggle('menu-open');
 });
 
 /* fallback foto remote: se un URL esterno muore, subentra la foto locale */
