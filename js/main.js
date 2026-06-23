@@ -7,6 +7,9 @@ var isMobile = window.matchMedia('(max-width:980px)');
 function onScroll() {
   var y = window.scrollY;
   hdr.classList.toggle('lite', y > 60);
+  if (isMobile.matches && burgerEl) {
+    burgerEl.classList.toggle('scrolled', y > 60);
+  }
   if (!isMobile.matches) {
     hdr.classList.toggle('hide', y > 500 && y > lastY);
   }

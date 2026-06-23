@@ -70,6 +70,7 @@ nav.main .cta:hover{color:var(--brass);border-color:var(--brass)}
 .burger{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px;position:relative;z-index:300}
 .burger span{position:absolute;left:8px;right:8px;height:1.5px;background:var(--bg);transition:.4s var(--ease)}
 header.lite .burger span{background:var(--ink)}
+.burger.scrolled span{background:var(--ink)}
 body.menu-open .burger span{background:var(--bg)!important}
 .burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:27px}
 body.menu-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
