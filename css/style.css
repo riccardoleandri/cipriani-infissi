@@ -58,6 +58,8 @@ header.lite .bar{height:74px}
 header.lite .logo .lg-l{display:none}
 header.lite .logo .lg-d{display:block}
 header.hide{transform:translateY(-100%)}
+body.menu-open #hdr{transform:none!important;background:transparent;box-shadow:none}
+body.menu-open{overflow:hidden}
 nav.main{display:flex;align-items:center;gap:40px}
 nav.main .nl{font-size:.7rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--bg);position:relative;padding:4px 0}
 header.lite nav.main .nl{color:var(--ink)}

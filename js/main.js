@@ -15,6 +15,8 @@ document.getElementById('burger').addEventListener('click', function () {
   document.body.classList.toggle('menu-open');
   if (document.body.classList.contains('menu-open')) {
     hdr.classList.remove('hide');
+  } else {
+    lastY = window.scrollY;
   }
 });
 
