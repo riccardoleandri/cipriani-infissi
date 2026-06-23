@@ -11,13 +11,23 @@ function onScroll() {
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
-document.getElementById('burger').addEventListener('click', function () {
-  document.body.classList.toggle('menu-open');
-  if (document.body.classList.contains('menu-open')) {
+var navEl = document.getElementById('nav');
+var burgerEl = document.getElementById('burger');
+/* su mobile il burger deve stare fuori dall'header per restare cliccabile
+   anche quando l'header si nasconde con transform */
+if (window.matchMedia('(max-width:980px)').matches) {
+  document.body.appendChild(burgerEl);
+}
+burgerEl.addEventListener('click', function () {
+  var opening = !document.body.classList.contains('menu-open');
+  if (opening) {
+    document.body.appendChild(navEl);
     hdr.classList.remove('hide');
   } else {
+    hdr.querySelector('.bar').appendChild(navEl);
     lastY = window.scrollY;
   }
+  document.body.classList.toggle('menu-open', opening);
 });
 
 /* fallback foto remote: se un URL esterno muore, subentra la foto locale */
