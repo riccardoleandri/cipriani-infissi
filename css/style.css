@@ -24,7 +24,7 @@ button{font-family:inherit}
 /* —— cornice fissa: il telaio —— */
 .telaio{position:fixed;inset:0;pointer-events:none;z-index:200;border:10px solid var(--bg);display:none}
 .telaio::after{content:"";position:absolute;inset:0;border:1px solid var(--line)}
-@media(min-width:1024px){.telaio{display:block}}
+@media(min-width:1024px){.telaio{display:none}}
 body.on-dark-edge .telaio{border-color:var(--bg)}
 
 .wrap{width:min(1280px,90vw);margin:0 auto}
@@ -51,7 +51,7 @@ h1 em,h2 em,h3 em,.it{font-style:italic}
 /* —— header —— */
 header{position:fixed;top:0;left:0;right:0;z-index:150;transition:background .5s var(--ease),box-shadow .5s,transform .5s var(--ease)}
 header .bar{display:flex;align-items:center;justify-content:space-between;width:min(1380px,calc(100vw - 48px));margin:0 auto;height:96px;transition:height .4s var(--ease)}
-header .logo img{height:34px;width:auto;transition:opacity .3s}
+header .logo img{height:44px;width:auto;transition:opacity .3s}
 header .logo .lg-d{display:none}
 header.lite{background:rgba(247,245,241,.88);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
 header.lite .bar{height:74px}
